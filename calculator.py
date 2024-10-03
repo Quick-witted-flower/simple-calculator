@@ -1,35 +1,52 @@
 import logging
-# Konfiguracja logging, ustawiam poziom na INFO, aby wyświetlić informacje
+
 logging.basicConfig(level=logging.INFO)
 
-# Pytam użytkownika o działanie
-operation = input("Podaj działanie, posługując się odpowiednią liczbą : 1 Dodawanie, 2 Odejmowanie, 3 Mnożenie, 4 Dzielenie: ")
+def dodawanie(a, b):
+    logging.info(f'Dodaję {a} i {b}')
+    return a + b
 
-# Pobieram dwie liczby od użytkownika
-liczba1 = float(input("Podaj pierwszą liczbę:"))
-liczba2 = float(input("Podaj drugą liczbę :"))
+def odejmowanie(a, b):
+    logging.info(f'Odejmuję {b} od {a}')
+    return a - b
 
-# Sprawdzam, jaka operację wybrał uzytkownik i wykonujemy odpowiednie działanie
-if operation == '1':
-    wynik = liczba1 +liczba2
-    logging.info(f"Dodaję {liczba1} i {liczba2}")
-elif operation == '2':
-    wynik = liczba1 - liczba2
-    logging.info(f"Odejmuję {liczba1} i {liczba2}")
-elif operation == '3':
-    wynik = liczba1 * liczba2
-    logging.info(f"Mnożę {liczba1} i { liczba2}")
-elif operation == '4':
-    if liczba2 != 0:
-        wynik = liczba1 / liczba2
-        logging.info(f"Dzielę {liczba1} i {liczba2}")
+def mnozenie(a, b):
+    logging.info(f'Mnożę {a} przez {b}')
+    return a * b
+
+def dzielenie(a, b):
+    if b != 0:
+        logging.info(f'Dzielę {a} przez {b}')
+        return a / b
     else:
-        wynik = "Błąd : nie można dzielić przez 0!"
-        logging.error("Próba dzielenia przez zero")
-else:
-    wynik = "Błędny wybór operacji!"
-    logging.warning("Niepoprawna operacja została wybrana")
+        logging.info('Błąd: Próba dzielenia przez zero')
+        return "Błąd: Dzielenie przez zero"
 
-# Wyświetlam wynik
-print(f"Wynik to : {wynik}")
+def main():
+    
+    print("Podaj działanie, posługując się odpowiednią liczbą:")
+    print("1 Dodawanie, 2 Odejmowanie, 3 Mnożenie, 4 Dzielenie:")
+    operacja = input()
+
+    
+    liczba1 = float(input("Podaj pierwszą liczbę: "))
+    liczba2 = float(input("Podaj drugą liczbę: "))
+
+    
+    if operacja == '1':
+        wynik = dodawanie(liczba1, liczba2)
+    elif operacja == '2':
+        wynik = odejmowanie(liczba1, liczba2)
+    elif operacja == '3':
+        wynik = mnozenie(liczba1, liczba2)
+    elif operacja == '4':
+        wynik = dzielenie(liczba1, liczba2)
+    else:
+        wynik = "Nieprawidłowy wybór"
+
+    
+    print(f"Wynik to: {wynik}")
+
+
+main()
 

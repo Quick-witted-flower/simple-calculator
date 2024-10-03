@@ -15,4 +15,13 @@ Aby uruchomić projekt na swoim komputerze, postępuj zgodnie z poniższymi krok
 1. Upewnij się, że masz zainstalowanego Pythona w wersji 3.x. Możesz to sprawdzić, uruchamiając w terminalu:
    ```bash
    python --version
+2. Wybierz operację: Po uruchomieniu, program zapyta o wybór działania. Dostępne opcje to:
+
+    1: Dodawanie
+    2: Odejmowanie
+    3: Mnożenie
+    4: Dzielenie
+3. Podaj liczby: Następnie program poprosi o dwie liczby, na których operacja będzie wykonana.
+4. Wynik: Program wykona operację na podanych liczbach i wyświetli wynik.
+   
    

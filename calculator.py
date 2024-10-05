@@ -47,6 +47,8 @@ def main():
     
     print(f"Wynik to: {wynik}")
 
+if __name__ == "__main__":
+    main()
 
-main()
+
 
